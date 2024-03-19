@@ -14,11 +14,14 @@ func main() {
 	pool := memory.NewGoAllocator()
 
 	// define data type, data type are primitive and nested
+	//
 	// struct is a nested data type.
+	//
 	// struct type holds
 	// 1. fields
 	// 2. index
 	// 3. metadata
+	//
 	// Fields consist of
 	// 1. Name
 	// 2. DataType

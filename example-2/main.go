@@ -60,24 +60,31 @@ func main() {
 	bld := array.NewRecordBuilder(pool, schema)
 	defer bld.Release()
 
+	// `Geek`
 	sb := bld.Field(0).(*array.StructBuilder)
 	defer sb.Release()
 
+	// `Geek`.`Name`
 	f1b := sb.FieldBuilder(0).(*array.StringBuilder)
 	defer f1b.Release()
 
+	// `Geek`.`Age`
 	f2b := sb.FieldBuilder(1).(*array.Float64Builder)
 	defer f2b.Release()
 
+	// `Geek`.`Country`
 	f3b := sb.FieldBuilder(2).(*array.StructBuilder)
 	defer f3b.Release()
 
+	// `Geek`.`Country`.`Code`
 	f4lb := f3b.FieldBuilder(1).(*array.ListBuilder)
 	defer f4lb.Release()
 
+	// `Geek`.`Country`.`City`
 	f4b := f4lb.ValueBuilder().(*array.StringBuilder)
 	defer f4b.Release()
 
+	//
 	sb.AppendValues([]bool{true})
 	f1b.AppendValues([]string{"Adheip"}, nil)
 	f2b.AppendValues([]float64{24}, nil)
