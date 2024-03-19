@@ -231,10 +231,8 @@ func (b *StructBuilder) resizeHelper(n int) {
 	}
 }
 
-func (b *StructBuilder) NumField() int { return len(b.fields) }
-func (b *StructBuilder) FieldBuilder(i int) Builder {
-	return b.fields[i]
-}
+func (b *StructBuilder) NumField() int              { return len(b.fields) }
+func (b *StructBuilder) FieldBuilder(i int) Builder { return b.fields[i] }
 
 // NewArray creates a Struct array from the memory buffers used by the builder and resets the StructBuilder
 // so it can be used to build a new array.
