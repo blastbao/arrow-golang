@@ -84,7 +84,6 @@ func main() {
 	f4b := f4lb.ValueBuilder().(*array.StringBuilder)
 	defer f4b.Release()
 
-	//
 	sb.AppendValues([]bool{true})
 	f1b.AppendValues([]string{"Adheip"}, nil)
 	f2b.AppendValues([]float64{24}, nil)
@@ -97,6 +96,9 @@ func main() {
 	rec1 := bld.NewRecord()
 	defer rec1.Release()
 
+	fmt.Println("__________________")
+	fmt.Println(rec1)
+
 	sb.AppendValues([]bool{true})
 	f1b.AppendValues([]string{"Nitish"}, nil)
 	f2b.AppendValues([]float64{32}, nil)
@@ -108,6 +110,8 @@ func main() {
 
 	rec2 := bld.NewRecord()
 	defer rec2.Release()
+	fmt.Println("__________________")
+	fmt.Println(rec2)
 
 	tbl := array.NewTableFromRecords(schema, []array.Record{rec1, rec2})
 	defer tbl.Release()
